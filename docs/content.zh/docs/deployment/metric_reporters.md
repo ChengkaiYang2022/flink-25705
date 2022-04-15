@@ -36,7 +36,7 @@ Flink 支持用户将 Flink 的各项运行时指标发送给外部系统。
 
 下面列出了所有发送器都适用的参数，可以通过配置文件中的 `metrics.reporter.<reporter_name>.<property>` 项进行配置。有些发送器有自己独特的配置，详见该发送器章节下的具体说明。
 
-{{< include_reporter_config "layouts/shortcodes/generated/metric_reporters_section.html" >}}
+{{< include_reporter_config "layouts/shortcodes/generated/metric_reporters_section_zh.html" >}}
 
 每种发送器都需要至少设置 `class` 或 `factory.class` 属性中的一个，要配置哪个取决于发送器，具体情况参照下文中各发送器的配置示例。
 有些基于定时调度的发送器还可以通过 `interval` 来配置发送间隔。
@@ -153,7 +153,7 @@ metrics.reporter.grph.interval: 60 SECONDS
 
 参数：
 
-{{< include_reporter_config "layouts/shortcodes/generated/influxdb_reporter_configuration.html" >}}
+{{< include_reporter_config "layouts/shortcodes/generated/influxdb_reporter_configuration_zh.html" >}}
 
 配置示例：
 
@@ -212,7 +212,7 @@ Flink 指标类型与 Prometheus 指标类型对应关系如下：
 
 参数：
 
-{{< include_reporter_config "layouts/shortcodes/generated/prometheus_push_gateway_reporter_configuration.html" >}}
+{{< include_reporter_config "layouts/shortcodes/generated/prometheus_push_gateway_reporter_configuration_zh.html" >}}
 
 配置示例：
 
