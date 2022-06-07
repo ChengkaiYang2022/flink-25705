@@ -204,6 +204,13 @@ public final class CanalJsonDeserializationSchema implements DeserializationSche
                 "Please invoke DeserializationSchema#deserialize(byte[], Collector<RowData>) instead.");
     }
 
+    /**TODO YCK 详细分析canal的json日志格式，其中调用了。然后调用 emitRow()收集到table
+     *
+     * @param message The message, as a byte array.
+     * @param out The collector to put the resulting messages.
+     *
+     * @throws IOException
+     */
     @Override
     public void deserialize(@Nullable byte[] message, Collector<RowData> out) throws IOException {
         if (message == null || message.length == 0) {
@@ -253,6 +260,7 @@ public final class CanalJsonDeserializationSchema implements DeserializationSche
                             before.setField(f, after.getField(f));
                         }
                     }
+                    // 应该是日志中的两条信息，update前后
                     before.setRowKind(RowKind.UPDATE_BEFORE);
                     after.setRowKind(RowKind.UPDATE_AFTER);
                     emitRow(row, before, out);

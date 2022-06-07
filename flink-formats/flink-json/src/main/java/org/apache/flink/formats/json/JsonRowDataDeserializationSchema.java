@@ -41,6 +41,8 @@ import static java.lang.String.format;
 import static org.apache.flink.util.Preconditions.checkNotNull;
 
 /**
+ * TODO YCK Json
+ *
  * Deserialization schema from JSON to Flink Table/SQL internal data structure {@link RowData}.
  *
  * <p>Deserializes a <code>byte[]</code> message as a JSON object and reads the specified fields.

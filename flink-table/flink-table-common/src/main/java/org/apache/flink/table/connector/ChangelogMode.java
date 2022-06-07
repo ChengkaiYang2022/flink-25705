@@ -27,7 +27,7 @@ import java.util.EnumSet;
 import java.util.Objects;
 import java.util.Set;
 
-/**
+/** TODO YCK 专用于ChangeLog，三种模式InsertOnly，UPSERT，ALL
  * The set of changes contained in a changelog.
  *
  * @see RowKind

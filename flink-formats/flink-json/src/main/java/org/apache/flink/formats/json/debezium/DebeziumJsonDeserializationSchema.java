@@ -42,6 +42,7 @@ import java.util.stream.Collectors;
 import static java.lang.String.format;
 
 /**
+ * TODO YCK 其反序列化方式要比Canal简单。
  * Deserialization schema from Debezium JSON to Flink Table/SQL internal data structure {@link
  * RowData}. The deserialization schema knows Debezium's schema definition and can extract the
  * database data and convert into {@link RowData} with {@link RowKind}.
