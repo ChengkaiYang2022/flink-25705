@@ -44,7 +44,7 @@ import org.apache.flink.connector.pulsar.source.split.PulsarPartitionSplit;
 import org.apache.flink.connector.pulsar.source.split.PulsarPartitionSplitSerializer;
 import org.apache.flink.core.io.SimpleVersionedSerializer;
 
-/**
+/**TODO YCK 大神独自搞的代码，值得研究
  * The Source implementation of Pulsar. Please use a {@link PulsarSourceBuilder} to construct a
  * {@link PulsarSource}. The following example shows how to create a PulsarSource emitting records
  * of <code>String</code> type.

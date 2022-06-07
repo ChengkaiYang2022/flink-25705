@@ -45,6 +45,7 @@ import java.io.IOException;
 import java.util.List;
 
 /**
+ * TODO YCK MQ的核心APISource，后续可以继续看，唯一个与SocketSource类似的connector
  * RabbitMQ source (consumer) which reads from a queue and acknowledges messages on checkpoints.
  * When checkpointing is enabled, it guarantees exactly-once processing semantics.
  *
@@ -311,6 +312,12 @@ public class RMQSource<OUT> extends MultipleIdsMessageAcknowledgingSourceBase<OU
         }
     }
 
+    /**TODO YCK 处理信息
+     * @param delivery
+     * @param collector
+     *
+     * @throws IOException
+     */
     private void processMessage(Delivery delivery, RMQCollectorImpl collector) throws IOException {
         AMQP.BasicProperties properties = delivery.getProperties();
         byte[] body = delivery.getBody();
@@ -325,7 +332,7 @@ public class RMQSource<OUT> extends MultipleIdsMessageAcknowledgingSourceBase<OU
         final long timeout = rmqConnectionConfig.getDeliveryTimeout();
         while (running) {
             Delivery delivery = consumer.nextDelivery(timeout);
-
+            // 线程同步等待锁
             synchronized (ctx.getCheckpointLock()) {
                 if (delivery != null) {
                     processMessage(delivery, collector);

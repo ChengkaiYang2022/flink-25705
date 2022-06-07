@@ -28,6 +28,7 @@ import java.io.IOException;
 import java.io.Serializable;
 
 /**
+ * TODO YCK 非常重要的接口，json、csv、avro 都基于它进行自己的序列化
  * The deserialization schema describes how to turn the byte messages delivered by certain data
  * sources (for example Apache Kafka) into data types (Java/Scala objects) that are processed by
  * Flink.
