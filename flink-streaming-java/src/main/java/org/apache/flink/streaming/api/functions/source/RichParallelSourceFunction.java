@@ -20,7 +20,7 @@ package org.apache.flink.streaming.api.functions.source;
 import org.apache.flink.annotation.Public;
 import org.apache.flink.api.common.functions.AbstractRichFunction;
 
-/**
+/**TODO YCK，核心API的connectr的sourceFunction
  * Base class for implementing a parallel data source. Upon execution, the runtime will execute as
  * many parallel instances of this function as configured parallelism of the source.
  *
